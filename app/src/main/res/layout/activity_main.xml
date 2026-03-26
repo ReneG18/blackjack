@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/light_brown">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Dealer -->
+        <TextView
+            android:id="@+id/dealerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dealer"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#222222"/>
+
+        <!-- Dealer Cards -->
+        <LinearLayout
+            android:id="@+id/dealerCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Player -->
+        <TextView
+            android:id="@+id/playerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#222222"/>
+
+        <!-- Player Cards -->
+        <LinearLayout
+            android:id="@+id/playerCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="36dp"/>
+
+        <!-- Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="36dp">
+
+            <!-- Hit Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/hitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Hit"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_green"/>
+
+            <!-- Stand Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/standButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Stand"
+                android:background="@drawable/button_green"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- New Game Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/newGameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/button_green"
+                android:textColor="#FFFFFF"
+                android:text="New Game"/>
+
+        </LinearLayout>
+
+        <!-- Result  -->
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Stats  -->
+        <TextView
+            android:id="@+id/statsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wins: 0   Losses: 0   Games: 0"
+            android:textSize="16sp"
+            android:textColor="#444444"/>
+
+    </LinearLayout>
+</ScrollView>
