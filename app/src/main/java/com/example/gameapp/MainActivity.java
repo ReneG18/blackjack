@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Card.initCardMap(this);
+
         game = new BlackJackGame();
 
         dealerCardsLayout = findViewById(R.id.dealerCards);
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 cardView.setImageResource(R.drawable.card_back);
                 dealerHiddenCardView = cardView;
             } else {
-                cardView.setImageResource(c.getCardDrawableId(this));
+                cardView.setImageResource(c.getCardDrawableId());
             }
 
             dealerCardsLayout.addView(cardView);
@@ -136,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
             dealerHiddenCardView.startAnimation(AnimationUtils.loadAnimation(this, R.anim.flip));
             dealerHiddenCardView.postDelayed(() -> {
-                dealerHiddenCardView.setImageResource(secondCard.getCardDrawableId(this));
+                dealerHiddenCardView.setImageResource(secondCard.getCardDrawableId());
                 dealerHiddenCardView.startAnimation(AnimationUtils.loadAnimation(this, R.anim.flip_back));
             }, 150);
         }
@@ -153,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void addCardToLayout(Card card, LinearLayout layout) {
-        int drawableId = card.getCardDrawableId(this);
+        int drawableId = card.getCardDrawableId();
 
         if (drawableId == 0) {
             drawableId = R.drawable.card_back; // fallback
