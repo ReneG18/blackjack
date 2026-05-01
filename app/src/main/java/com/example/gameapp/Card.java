@@ -27,8 +27,9 @@ public class Card {
 
         for (String s : suits) {
             for (String v : values) {
+                //creates string key to label card
                 String key = s + "_" + v;
-                // Use getIdentifier just once per card to find its ID
+                // Use getIdentifier just once per card to find its ID value
                 int resId = context.getResources().getIdentifier(key, "drawable", context.getPackageName());
                 if (resId != 0) {
                     card_Map.put(key, resId);

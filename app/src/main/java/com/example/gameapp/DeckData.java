@@ -5,16 +5,23 @@ public class DeckData {
     private Card[] deck;
     private int topCard;
     private int deckSize;
+
+    //deck constructor
     public DeckData() {
+        //create a new deck with 52 cards
         deck = new Card[52];
+        //call reset deck function to randomize the card set
         resetDeck();
     }
 
+
     public void resetDeck() {
         int index = 0;
-
+        //suit of the card
         for (int i = 3; i >= 0; i--) {
+            //value of the card
             for (int j = 0; j <= 12; j++) {
+                //insert card into deck
                 deck[index++] = new Card(i, j);
             }
         }

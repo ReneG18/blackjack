@@ -16,27 +16,23 @@ public class BlackJack {
         for (Card c : hand) {
             int v = c.getCardValue();
 
-            if (v >= 0 && v <= 7) {
+            if (v <= 7) {
+                //values 0-7 -> cards 2-9
                 total += (v + 2);
             }
-            else if (v >= 8 && v <= 10) {
+            else if (v <= 11) {
+                //values 8-11 -> 10,j,q,k
                 total += 10;
             }
-            else if (v == 11) {
-                total += 10;
-            }
-            else if (v == 12) {
+            else{
+                //ace cards
                 aces++;
             }
         }
 
         // Handling aces
         for (int i = 0; i < aces; i++) {
-            if (total + 11 <= 21) {
-                total += 11;
-            } else {
-                total += 1;
-            }
+            total += (total + 11 <= 21) ? 11 : 1;
         }
 
         return total;

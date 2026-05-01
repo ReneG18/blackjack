@@ -34,11 +34,11 @@ public class BlackJackGame {
         return c;
     }
 
-    public Card dealerHit() {
-        Card c = deck.dealCard();
-        dealerHand.addCard(c);
-        return c;
-    }
+//    public Card dealerHit() {
+//        Card c = deck.dealCard();
+//        dealerHand.addCard(c);
+//        return c;
+//    }
 
     public BlackJack getPlayerHand() {
         return playerHand;
